@@ -1,13 +1,11 @@
 <?php
 
-// Выключаем отображение ошибок после отладки.
 define('DISPLAY_ERRORS', 1);
 
 // Папки со скриптами и модулями.
 define('INCLUDE_PATH', './scripts' . PATH_SEPARATOR . './modules');
 
-// Храним настройки в массиве чтоб легче было смотреть (print_r),
-// хранить (serialize), оверрайдить и не плодить глобалов.
+// Базовые настройки сайта
 $conf = array(
   'sitename' => 'ARENX FAMIlY',
   'theme' => './theme', 
