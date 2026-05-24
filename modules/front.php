@@ -1,5 +1,4 @@
 <?php
-// modules/front.php
 require_once(__DIR__ . '/../scripts/validator.php');
 
 function front_get($request) {
