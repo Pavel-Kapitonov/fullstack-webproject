@@ -3,17 +3,14 @@
 // Выключаем отображение ошибок после отладки.
 define('DISPLAY_ERRORS', 1);
 
-// По возможности кладём скрипты и включаемые файлы выше
-// публично доступной директории из соображений безопасности.
-
 // Папки со скриптами и модулями.
 define('INCLUDE_PATH', './scripts' . PATH_SEPARATOR . './modules');
 
 // Храним настройки в массиве чтоб легче было смотреть (print_r),
 // хранить (serialize), оверрайдить и не плодить глобалов.
 $conf = array(
-  'sitename' => 'ARENX FAMIly',
-  'theme' => './theme', // Папка, где лежит твой page.tpl.php
+  'sitename' => 'ARENX FAMIlY',
+  'theme' => './theme', 
   'charset' => 'UTF-8',
   'clean_urls' => TRUE,
   'display_errors' => 1,
