@@ -9,3 +9,11 @@ CREATE TABLE users (
     password_hash VARCHAR(255) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+CREATE TABLE admins (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    login VARCHAR(50) NOT NULL UNIQUE,
+    password_hash VARCHAR(255) NOT NULL
+);
+
+INSERT INTO admins (login, password_hash) VALUES ('admin', '$2y$10$3uywbq3JiUHJ1wS4HvlSVOaxEqpCFibYItZpC9jjIVmwmd41IY4va');
