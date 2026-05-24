@@ -8,7 +8,7 @@ require_once __DIR__ . '/scripts/init.php';
 require_once __DIR__ . '/modules/front.php';
 
 $realMethod = $_SERVER['REQUEST_METHOD'];
-$rawInput = file_get_contents('php://input');
+$rawInput = file_get_contents('php://input'); // сырой json содержимое тела запроса
 $parsedInput = [];
 
 if (!empty($rawInput)) {
