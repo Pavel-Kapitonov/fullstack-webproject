@@ -27,10 +27,10 @@ $request = [
     'method' => $realMethod,
 ];
 
-$requestUri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+$requestUri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH); // достём url 
 
-$pathParts = explode('fullstack-webproject', $requestUri);
-$path = end($pathParts);
+$pathParts = explode('fullstack-webproject', $requestUri); // отрезаем от него fullstack
+$path = end($pathParts); // берем хвост
 
 // Очищаем от слэшей. Главная страница станет пустой строкой ''
 $path = trim($path, '/');
