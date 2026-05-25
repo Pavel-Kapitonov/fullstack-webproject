@@ -38,6 +38,24 @@ if (!$auth_success) {
 
 
 // === УДАЛЕНИЕ ПОЛЬЗОВАТЕЛЯ ===
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_id'])) {
+    if (!isset($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
+        header('HTTP/1.1 403 Forbidden');
+        exit('Ошибка безопасности: CSRF-токен невалиден');
+    }
+
+    $del_id = (int)$_POST['delete_id'];
+    try {
+        $stmt = $db->prepare("DELETE FROM users WHERE id = ?");
+        $stmt->execute([$del_id]);
+        
+        header('Location: /fullstack-webproject/modules/admin.php?success=deleted'); 
+        exit();
+    } catch (PDOException $e) {
+        error_log($e->getMessage());
+        exit('Произошла системная ошибка при удалении.');
+    }
+}
 
 
 // === ПОЛУЧЕНИЕ ДАННЫХ ===
